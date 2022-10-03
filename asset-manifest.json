@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.881058da.js",
-    "static/js/787.d9ff75d9.chunk.js": "/static/js/787.d9ff75d9.chunk.js",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.881058da.js.map": "/static/js/main.881058da.js.map",
-    "787.d9ff75d9.chunk.js.map": "/static/js/787.d9ff75d9.chunk.js.map"
+    "main.css": "/SpibWebsite/static/css/main.073c9b0a.css",
+    "main.js": "/SpibWebsite/static/js/main.5d5fc2a0.js",
+    "static/js/787.d9ff75d9.chunk.js": "/SpibWebsite/static/js/787.d9ff75d9.chunk.js",
+    "index.html": "/SpibWebsite/index.html",
+    "main.073c9b0a.css.map": "/SpibWebsite/static/css/main.073c9b0a.css.map",
+    "main.5d5fc2a0.js.map": "/SpibWebsite/static/js/main.5d5fc2a0.js.map",
+    "787.d9ff75d9.chunk.js.map": "/SpibWebsite/static/js/787.d9ff75d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.881058da.js"
+    "static/js/main.5d5fc2a0.js"
   ]
 }
