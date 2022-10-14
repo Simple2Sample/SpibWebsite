@@ -6,8 +6,8 @@ export const FetchAndDisplayImage = () => {
   const [data, setData] = useState("");
   const [ID, setID] = useState("");
 
-  const openInNewTab = url => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const openInNewTab = () => {
+    window.open("https://derpibooru.org/images/" + ID, '_blank', 'noopener,noreferrer');
   }
 
   useEffect(() => {
@@ -22,6 +22,6 @@ export const FetchAndDisplayImage = () => {
   }, [])
 
   if(data !== ""){
-    return (<div><img src={data} height={window.innerHeight} onClick={() => openInNewTab("https://derpibooru.org/images/"+ID)} /></div>)
+    return (<div><img src={data} height={window.innerHeight} onClick={() => openInNewTab()} /></div>)
   }
 }
