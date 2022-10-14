@@ -1,8 +1,6 @@
 import './App.css';
 import { FetchAndDisplayImage } from './FetchImage';
-import { useEffect, useState } from 'react';
 import React from 'react';
-import ReactDOM from 'react-dom'
 
 
 function App() {

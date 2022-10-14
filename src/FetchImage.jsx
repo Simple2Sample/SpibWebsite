@@ -20,7 +20,6 @@ useEffect(() => {
           setData(response.images[0].view_url);
           setID(response.images[0].id);
         })},[])
-               // const imgURL = receivedImage.images[0].view_url;
               
                 if(data !== []){
                 return (<div><img src={data} height={window.innerHeight} onClick={() => openInNewTab("https://derpibooru.org/images/"+ID)} /></div>)
