@@ -11,6 +11,21 @@ export const FetchAndDisplayImage = () => {
   }
 
   useEffect(() => {
+    getImage()
+
+    window.addEventListener("keydown", handleKeyDown, false)
+    return () => window.removeEventListener("keydown", handleKeyDown, false)
+  }, [])
+
+  const handleKeyDown = e => {
+    switch (e.key) {
+      case "ArrowRight":
+        getImage()
+        break;
+    }
+  }
+
+  const getImage = () => {
     fetch(apiURL)
     .then((res) =>
       res.json())
@@ -19,7 +34,7 @@ export const FetchAndDisplayImage = () => {
       setData(response.images[0].view_url);
       setID(response.images[0].id);
     })
-  }, [])
+  }
 
   if(data === ""){
     return <p>Loading...</p>
