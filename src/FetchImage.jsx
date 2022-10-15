@@ -3,41 +3,54 @@ import { useState, useEffect } from "react";
 const apiURL = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,solo,score.gte%3A150&sf=random";
 
 export const FetchAndDisplayImage = () => {
-  const [data, setData] = useState("");
-  const [ID, setID] = useState("");
+  const [image, setImage] = useState({})
+  const [nextImage, setNextImage] = useState({})
 
   const openInNewTab = () => {
-    window.open("https://derpibooru.org/images/" + ID, '_blank', 'noopener,noreferrer');
+    window.open("https://derpibooru.org/images/" + image.id, '_blank', 'noopener,noreferrer');
   }
 
   useEffect(() => {
-    getImage()
-
-    window.addEventListener("keydown", handleKeyDown, false)
-    return () => window.removeEventListener("keydown", handleKeyDown, false)
+    const setup = async () => {
+      setImage(await getImage())
+    }
+    setup()
   }, [])
 
-  const handleKeyDown = e => {
+  const handleKeyDown = async e => {
     switch (e.key) {
       case "ArrowRight":
-        getImage()
+        setImage(nextImage)
         break;
     }
   }
 
-  const getImage = () => {
-    fetch(apiURL)
-    .then((res) =>
-      res.json())
-    .then((response) => {
-      console.log(response);
-      setData(response.images[0].view_url);
-      setID(response.images[0].id);
+  useEffect(() => {
+    if (image !== {}) {
+      const next = async () => {
+        setNextImage(await getImage())
+      }
+      next()
+    }
+  }, [image])
+
+  const getImage = async () => {
+    return new Promise(resolve => {
+      fetch(apiURL)
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+        resolve({url: response.images[0].view_url, id: response.images[0].id})
+      })
     })
   }
 
-  if(data === ""){
+  if(!image){
     return <p>Loading...</p>
   }
-  return <img src={data} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
+  return (
+    <div style={{position: "fixed", width: "100vw", height: "100vh"}} tabIndex="0" onKeyDown={handleKeyDown} >
+      <img src={image.url} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
+    </div>
+  )
 }
