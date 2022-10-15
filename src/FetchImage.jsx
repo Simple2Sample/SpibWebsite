@@ -22,6 +22,6 @@ export const FetchAndDisplayImage = () => {
   }, [])
 
   if(data !== ""){
-    return (<div><img src={data} height={window.innerHeight} onClick={() => openInNewTab()} /></div>)
+    return <img src={data} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
   }
 }
