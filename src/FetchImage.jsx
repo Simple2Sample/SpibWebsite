@@ -21,7 +21,8 @@ export const FetchAndDisplayImage = () => {
     })
   }, [])
 
-  if(data !== ""){
-    return <img src={data} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
+  if(data === ""){
+    return <p>Loading...</p>
   }
+  return <img src={data} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
 }
