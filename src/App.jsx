@@ -1,17 +1,12 @@
 import './App.css';
-import { FetchAndDisplayImage } from './Fetchimage';
-import { useEffect, useState } from 'react';
+import { FetchAndDisplayImage } from './FetchImage';
 import React from 'react';
-import ReactDOM from 'react-dom'
-
 
 function App() {
   return (
-
     <div className="App" title='Spib'>
-      <div><FetchAndDisplayImage></FetchAndDisplayImage></div>
+      <FetchAndDisplayImage />
     </div>
-   
   );
 }
 
