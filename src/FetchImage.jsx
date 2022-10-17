@@ -40,9 +40,13 @@ export const FetchAndDisplayImage = () => {
 
   const handleKeyDown = e => {
     switch (e.key) {
+      case "l":
+      case "d":
       case "ArrowRight":
         nextImage()
         break;
+      case "h":
+      case "a":
       case "ArrowLeft":
         prevImage()
         break;
