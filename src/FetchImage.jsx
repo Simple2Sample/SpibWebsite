@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const apiURL = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,solo,score.gte%3A150&sf=random";
+const apiURL = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-irl,score.gte%3A150&sf=random";
 
 export const FetchAndDisplayImage = () => {
   const [images, setImages] = useState([])
