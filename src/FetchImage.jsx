@@ -58,7 +58,7 @@ export const FetchAndDisplayImage = () => {
   }
   return (
     <div style={{background:"black", width: "100vw", height: "100vh"}} tabIndex="0" onKeyDown={handleKeyDown} >
-      <img src={images[currImgNo].view_url} style={{background:"white",cursor: "pointer",maxHeight:"100%",height:"auto",maxWidth:"100%"}} onClick={() => openInNewTab()} />
+      <img alt="" src={images[currImgNo].view_url} style={{background:"white",cursor: "pointer",maxHeight:"100%",height:"auto",maxWidth:"100%"}} onClick={() => openInNewTab()} />
     </div>
   )
 }
