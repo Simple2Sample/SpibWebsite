@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const apiURL = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-irl,score.gte%3A150&sf=random";
+const apiURL = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-irl,score.gte%3A150&sf=random";
 
 export const FetchAndDisplayImage = () => {
   const [images, setImages] = useState([])
@@ -57,8 +57,8 @@ export const FetchAndDisplayImage = () => {
     return <p>Loading...</p>
   }
   return (
-    <div style={{position: "fixed", width: "100vw", height: "100vh"}} tabIndex="0" onKeyDown={handleKeyDown} >
-      <img src={images[currImgNo].view_url} height={window.innerHeight} style={{cursor: "pointer"}} onClick={() => openInNewTab()} />
+    <div style={{background:"black", width: "100vw", height: "100vh"}} tabIndex="0" onKeyDown={handleKeyDown} >
+      <img src={images[currImgNo].view_url} style={{background:"white",cursor: "pointer",maxHeight:"100%",height:"auto",maxWidth:"100%"}} onClick={() => openInNewTab()} />
     </div>
   )
 }
