@@ -25,6 +25,22 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Spib</title>
+    <meta property="og:image" content="" id="og-image">
+    <script>
+      // Generate the dynamic image URL using JavaScript
+      const embedAPI = "https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-original_format:mp4,-comic,-irl,score.gte%3A150&sf=random";
+      let dynamicImageURL = "";
+      fetch(embedAPI)
+      .then((res) =>
+        res.json())
+ 
+      .then((response) => {
+        dynamicImageURL = response.images[0].view_url;
+      })
+
+      const ogImage = document.getElementById("og-image");
+      ogImage.content = dynamicImageURL;
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
