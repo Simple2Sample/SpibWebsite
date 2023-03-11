@@ -26,10 +26,10 @@ const checkQuery = () => {
   if ( window.location.search === "?nsfw") {
 
     setLoadingText("Loading lewd yellow fire horse...");
-    setApiURL("https://derpibooru.org/api/v1/json/search/images?filter_id=195915&q=explicit,-diaper,-foalcon,-artist:mykegreywolf,-sfm,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A250&sf=random");
+    setApiURL("https://derpibooru.org/api/v1/json/search/images?filter_id=195915&per_page=50&q=explicit,-diaper,-foalcon,-artist:mykegreywolf,-sfm,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A250&sf=random");
 return;
   }
-  setApiURL("https://derpibooru.org/api/v1/json/search/images?q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A150&sf=random");
+  setApiURL("https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A150&sf=random");
   return;
 }
 
