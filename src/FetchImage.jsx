@@ -39,7 +39,7 @@ const checkQuery = () => {
     return;
   }
 if (window?.location.search) {  
-  setLoadingText("Loading non-yellow fire horse?! WHAT THE FUCK IS WRONG WITH YOU?! I'm very disappointed... You really should reconsider your decisions in life. Everyone knows that one should spend all their energy on worshipping fire horse. Wow I'm disappointed.");
+  setLoadingText(`Loading non-yellow fire horse?! WHAT THE FUCK IS WRONG WITH YOU?! Why the fuck are you searching for ${window.location.search.slice(1).toString()} and not Spitfire? Everyone knows that one should spend all their energy on worshipping fire horse. Wow I am so disappointed. She is the captain of the Wonderbolts, she got an amazing character design, nice uniform and skills too. And you decide to fetch images of ${window.location.search.slice(1).toString()}? Spitfire is the ultimate pony and looking up anyone else is simply a waste of time. Aaaaaæøææåøåøæ. Ok I give up. Go ahead, look up that worthless piece of shit ${window.location.search.slice(1).toString()}. I don't care. You know what I will give you a pro tip. If you write ?nsfw instead, you will get loads of NSFW pics delivered directly to you. It's all lewd images of Spitfire so be warned. Do not open it if you are under 18. Anyways, I hope that can convince you to look at pictures of her instead. Have a nice day. - Simple Sæmple`);
   setApiURL(modifiedBaseURL(window.location.search));
   return;
 }
