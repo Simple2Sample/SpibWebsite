@@ -6,6 +6,8 @@ export const FetchAndDisplayImage = () => {
   const [currImgNo, setCurrImgNo] = useState(0);
   const [apiURL, setApiURL] = useState('');
   const [loadingText, setLoadingText] = useState("Loading yellow fire horse...");
+  const [nextImageObj, setNextImageObj] = useState('');
+  
 
   const openInNewTab = () => {
     window.open("https://derpibooru.org/images/" + images[currImgNo].id, '_blank', 'noopener,noreferrer');
@@ -62,6 +64,16 @@ useEffect(() => {
     }
   }, [apiURL])
 
+  useEffect(() => {
+if (images[currImgNo+1]) {
+  const prefetch = new Image();
+  prefetch.src = images[currImgNo+1].view_url;
+  setNextImageObj(prefetch);
+}
+
+
+  },[currImgNo])
+
   const nextImage = () => {
     // if one more remains
 
@@ -114,6 +126,8 @@ useEffect(() => {
     
     )
   }
+
+  
   return (
     <div  style={{display:"flex",alignItems:"center",justifyContent:"space-around", background:"black", width: "100vw", height: "100vh"}} tabIndex="0" onKeyDown={handleKeyDown} >
 
