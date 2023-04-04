@@ -22,14 +22,30 @@ export const FetchAndDisplayImage = () => {
     delta: 5
   });
 
-const checkQuery = () => {
-  if ( window.location.search === "?nsfw") {
+  const modifiedBaseURL = (queryString) => {
+    const baseURL = "https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-fetish,-diaper,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl";
+    const URLTail = ",score.gte%3A100&sf=random";
+    const modifiedURL = baseURL +","+ window.location.search.slice(1).toString() + URLTail;
+    return modifiedURL;
+  }
 
+
+const checkQuery = () => {
+  if ( window?.location.search === "?nsfw") {
     setLoadingText("Loading lewd yellow fire horse...");
     setApiURL("https://derpibooru.org/api/v1/json/search/images?filter_id=195915&per_page=50&q=explicit,-diaper,-foalcon,-artist:mykegreywolf,-sfm,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A250&sf=random");
-return;
+    return;
   }
-  setApiURL("https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A150&sf=random");
+if (window?.location.search) {  
+  setLoadingText("Loading non-yellow fire horse?! WHAT THE FUCK IS WRONG WITH YOU?! I'm very disappointed... You really should reconsider your decisions in life. Everyone knows that one should spend all their energy on worshipping fire horse. Wow I'm disappointed.");
+  setApiURL(modifiedBaseURL(window.location.search));
+  return;
+}
+
+if (!window?.location.search)
+  {
+  setApiURL("https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-fetish,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A100&sf=random");
+  }
   return;
 }
 
@@ -49,7 +65,7 @@ useEffect(() => {
   const nextImage = () => {
     // if one more remains
 
-    if (currImgNo == images.length - 14 ) {
+    if (currImgNo === images.length - 14 ) {
 
        getImages();
        setCurrImgNo(currImgNo + 1)
