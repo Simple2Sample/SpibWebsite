@@ -11,7 +11,8 @@ const Spib = styled.img`
 display: flex;
 // allow overflow to the right
 overflow: hidden;
-min-width:30%;
+width:30%;
+min-width: 200px;
 z-index: 1;
 margin-bottom: -8px;
 margin-left: "minmax(auto,10%)";
