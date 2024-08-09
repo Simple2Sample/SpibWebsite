@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import 'bootstrap/dist/css/bootstrap.css';
+import BootstrapClient from '@/components/BootstrapClient.js';
 import { Inter } from "next/font/google";
 import "./globals.css";
-import styled, { ThemeProvider } from "styled-components";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,17 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const theme = {
-    main: "mediumseagreen"
-  };
-
+ 
   return (
     
     <html lang="en">
 
 
       <body className={inter.className}>{children}</body>
-
+      <BootstrapClient />
     </html>
   );
 }
