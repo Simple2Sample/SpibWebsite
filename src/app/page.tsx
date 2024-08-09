@@ -43,6 +43,7 @@ column-gap: 16px;
 grid-column: 1 /-1;
 margin-left: 32px;
 margin-right: 32px;
+margin-top: 32px;
 
 `;
 
