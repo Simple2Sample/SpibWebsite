@@ -1,12 +1,11 @@
 "use client";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { styled } from "styled-components";
 import { MainPageGrid } from "@/components/styles/mainBar.Styles";
-import Logo192 from "@/public/logo192.png";
 import Hero from "@/components/mainPage/hero";
 import Divider from "@/components/mainPage/divider";
 import Card from "@/components/mainPage/card";
+
 
 const Spib = styled.img`
 display: flex;
