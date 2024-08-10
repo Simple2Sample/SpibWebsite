@@ -14,48 +14,54 @@ const CardContainer= styled.div<CardContainerProps>`
 display: grid;
 grid-column: ${props => props.$gridcolumn};
 background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity));
-grid-template-rows: 1.5fr 1fr;
+grid-template-rows: 3fr 1fr;
 grid-template-columns: 1fr 1fr;
 height: 384px;
 width: 256px;
 
     `;
+const ImageContainer = styled.div`
+grid-column: 1/-1;
+grid-row: 1/-1;
+height: 100%;
+&::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%; /* Adjust the height as needed */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent); /* Adjust the gradient as needed */
+    pointer-events: none; /* Ensure the overlay doesn't interfere with interactions */
+  }
+`;
 
 const StyledImg = styled.img`
-grid-column: 1/-1;
-grid-row: 1;
 height: 100%;
-object-fit:fill;
+object-fit:cover;
+
+
 `;
 
-const StyledText = styled.p`
-color: black;
+const StyledText = styled.h3`
+z-index: 1;
+color: white;
 align-content: center;
 text-align: center;
+grid-column: 1/-1;
+grid-row: 2;
+
 `;
 
-const StyledViewButton = styled.button`
-display: flex;
-width: 86px;
-height: 100px;
-margin-right: 16px;
-margin-bottom: 16px;
-align-items: center;
-justify-content: center;
-justify-self: end;
-align-self: center;
-grid-column: 2;
-grid-row: 2;
-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.25);
-`;
 
 const CardComponent: React.FC<CardProps> = (props) => {
 
   return (
    <CardContainer className='bg-light card' $gridcolumn={props.$gridcolumn}>
-    <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
+   <ImageContainer> <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
+   </ImageContainer>
       <StyledText className="card-text">{props.text}</StyledText>
-        <StyledViewButton className="text-body-secondary btn btn-lg px-4 ">{props.buttonText}</StyledViewButton>
+       
   
 
     </CardContainer>
