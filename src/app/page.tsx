@@ -87,9 +87,9 @@ export default function Home() {
         <Spib src="/SpibBounce.gif" />
         <Divider />
         <MainContentGrid>
-        <Card gridcolumn={1} />
-        <Card gridcolumn={2}/>
-        <Card gridcolumn={3}/>
+        <Card $gridcolumn={1} />
+        <Card $gridcolumn={2} />
+        <Card $gridcolumn={3} />
         </MainContentGrid>
         </MainPageGrid>
    
