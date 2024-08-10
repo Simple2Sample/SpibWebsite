@@ -1,26 +1,63 @@
 import styled from 'styled-components';
 
-interface CardContainerProps {
-    $gridcolumn: number;
-  }
+type CardContainerProps ={
+  $gridcolumn: number;
+  
+}
+
+type CardProps = CardContainerProps &{
+  image: string;
+  text: string;
+  buttonText: string;
+};
 const CardContainer= styled.div<CardContainerProps>`
+display: grid;
 grid-column: ${props => props.$gridcolumn};
+background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity));
+grid-template-rows: 1.5fr 1fr;
+grid-template-columns: 1fr 1fr;
+height: 384px;
+width: 256px;
+
     `;
-const CardComponent: React.FC<CardContainerProps> = (props) => {
+
+const StyledImg = styled.img`
+grid-column: 1/-1;
+grid-row: 1;
+height: 100%;
+object-fit:fill;
+`;
+
+const StyledText = styled.p`
+color: black;
+align-content: center;
+text-align: center;
+`;
+
+const StyledViewButton = styled.button`
+display: flex;
+width: 86px;
+height: 100px;
+margin-right: 16px;
+margin-bottom: 16px;
+align-items: center;
+justify-content: center;
+justify-self: end;
+align-self: center;
+grid-column: 2;
+grid-row: 2;
+box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.25);
+`;
+
+const CardComponent: React.FC<CardProps> = (props) => {
 
   return (
-   <CardContainer $gridcolumn={props.$gridcolumn}>
-    <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-    <div className="card-body">
-      <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="btn-group">
-          <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
-        </div>
-        <small className="text-body-secondary">9 mins</small>
-      </div>
-    </div>
+   <CardContainer className='bg-light card' $gridcolumn={props.$gridcolumn}>
+    <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
+      <StyledText className="card-text">{props.text}</StyledText>
+        <StyledViewButton className="text-body-secondary btn btn-lg px-4 ">{props.buttonText}</StyledViewButton>
+  
+
     </CardContainer>
   );
 }

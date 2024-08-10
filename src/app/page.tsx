@@ -39,6 +39,9 @@ const MainContentGrid = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 grid-template-rows: 1fr;
+justify-items: center;
+justify-self: center ;
+max-width: 1028px;
 column-gap: 16px;
 grid-column: 1 /-1;
 margin-left: 32px;
@@ -53,10 +56,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
  
-      <MainPageGrid >
 
    
 
+      <MainPageGrid >
 <StyledNavbar className="navbar navbar-expand-lg navbar-light bg-light">
 <a href="/"><Logo src="/logo192.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
   <a className="navbar-brand" href="#">Spib.no</a>
@@ -87,9 +90,9 @@ export default function Home() {
         <Spib src="/SpibBounce.gif" />
         <Divider />
         <MainContentGrid>
-        <Card $gridcolumn={1} />
-        <Card $gridcolumn={2} />
-        <Card $gridcolumn={3} />
+        <Card text="It is important that things will get better" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={1} />
+        <Card text="Hey yo" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={2} />
+        <Card text="Spib" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={3} />
         </MainContentGrid>
         </MainPageGrid>
    
