@@ -69,7 +69,7 @@ export default function Home() {
         <a className="nav-link fw-bold" href="#">Home <span className="sr-only"></span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Infinite Spitfire</a>
+        <a className="nav-link" href="infiniteSpitfire">Infinite Spitfire</a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">About Me</a>
