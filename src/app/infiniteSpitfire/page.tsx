@@ -45,7 +45,7 @@ align-self: end;
 border-radius: 16px;
 background-color: grey;
 height: 150px;
-width: 250px;
+width: 240px;
 
 `;
 const StyledInstructions = styled.p`
@@ -175,13 +175,11 @@ if (images[currImgNo+1]) {
       return;
     }
     switch (e.key) {
-      case "l":
       case "d":
       case "D":
       case "ArrowRight":
         nextImage()
         break;
-      case "h":
       case "a":
       case "A":
       case "ArrowLeft":
@@ -204,9 +202,8 @@ if (images[currImgNo+1]) {
     <InstructionsContainer>
       <StyledInstructions>Made by {images[currImgNo] ? getArtistName(images[currImgNo] ) : 'Unknown'}</StyledInstructions>
         <h4>Instructions:</h4>
-        <StyledInstructions>Click A or D, or swipe to navigate</StyledInstructions>
+        <StyledInstructions>{`Press "A" or "D", arrows or swipe to navigate`}</StyledInstructions>
         <StyledInstructions>Click to open image in new tab</StyledInstructions>
-        <StyledInstructions> {`Press "l" or "d" for next image`}</StyledInstructions>
         <StyledInstructions> {`Images hosted by Derpibooru`}</StyledInstructions>
         </InstructionsContainer> 
     </MainPageGrid>
