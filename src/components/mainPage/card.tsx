@@ -1,23 +1,24 @@
+import { link } from 'fs';
 import styled from 'styled-components';
 
 type CardContainerProps ={
-  $gridcolumn: number;
+
   
 }
 
 type CardProps = CardContainerProps &{
   image: string;
   text: string;
-  buttonText: string;
+  linkToPage: string;
 };
 const CardContainer= styled.div<CardContainerProps>`
 display: grid;
-grid-column: ${props => props.$gridcolumn};
 background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity));
 grid-template-rows: 3fr 1fr;
 grid-template-columns: 1fr 1fr;
 height: 384px;
 width: 256px;
+margin-bottom: 16px;
 
     `;
 const ImageContainer = styled.div`
@@ -58,8 +59,8 @@ margin-bottom: px;
 const CardComponent: React.FC<CardProps> = (props) => {
 
   return (
-    <a href='infiniteSpitfire'>
-   <CardContainer className='bg-light card' $gridcolumn={props.$gridcolumn}>
+    <a href={props.linkToPage}>
+   <CardContainer className='bg-light card' >
    <ImageContainer> <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
    </ImageContainer>
       <StyledText className="card-text">{props.text}</StyledText>

@@ -10,8 +10,8 @@ import Card from "@/components/mainPage/card";
 const Spib = styled.img`
 display: flex;
 // allow overflow to the right
-overflow: hidden;
-width:30%;
+
+max-width: 30%;
 min-width: 200px;
 z-index: 1;
 margin-bottom: -8px;
@@ -21,6 +21,12 @@ align-self: flex-end;
 grid-column: 2;
 grid-row: 2 / 3;
 
+// hide when the screen is narrow
+@media (max-width: 450px) {
+  grid-column: 1 / -1;
+  min-width: 10%;
+  justify-self: flex-end;
+}
 
 `;
 
@@ -36,12 +42,12 @@ margin-left: 8px;
 `;
 
 const MainContentGrid = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: 1fr;
-justify-items: center;
+display: flex;
 justify-self: center ;
-max-width: 1028px;
+justify-content: center;
+max-width:  1028px;
+width: auto;
+flex-wrap: wrap;
 column-gap: 16px;
 grid-column: 1 /-1;
 margin-left: 32px;
@@ -90,9 +96,9 @@ export default function Home() {
         <Spib src="/SpibBounce.gif" />
         <Divider />
         <MainContentGrid>
-        <Card text="It is important that things will get better" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={1} />
-        <Card text="Hey yo" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={2} />
-        <Card text="Spib" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" $gridcolumn={3} />
+        <Card linkToPage="infiniteSpitfire" text="Looking for the old page?" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg"/>
+        <Card linkToPage="aboutMe" text="Who am I?" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg"  />
+        <Card linkToPage="donate" text="asd" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" />
         </MainContentGrid>
         </MainPageGrid>
    
