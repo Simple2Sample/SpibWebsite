@@ -8,6 +8,8 @@ margin-bottom: 32px;
 padding-top: 8px;
 margin-top: auto;
 padding-bottom: 3rem ;
+max-width: 600px;
+justify-self: flex-end;
 `;
 
 const HeroContainer = styled.div`

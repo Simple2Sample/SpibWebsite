@@ -5,6 +5,7 @@ import { MainPageGrid } from "@/components/styles/mainBar.Styles";
 import Hero from "@/components/mainPage/hero";
 import Divider from "@/components/mainPage/divider";
 import Card from "@/components/mainPage/card";
+import Navbar from "@/components/mainPage/navbar";
 
 
 const Spib = styled.img`
@@ -21,8 +22,7 @@ align-self: flex-end;
 grid-column: 2;
 grid-row: 2 / 3;
 
-// hide when the screen is narrow
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   grid-column: 1 / -1;
   min-width: 10%;
   justify-self: flex-end;
@@ -30,16 +30,7 @@ grid-row: 2 / 3;
 
 `;
 
-const StyledNavbar = styled.nav`
-grid-row: 1 ;
-grid-column: 1 / -1;
-`;
 
-const Logo = styled.img`
-margin-bottom: 10px;
-margin-right: 16px;
-margin-left: 8px;
-`;
 
 const MainContentGrid = styled.div`
 display: flex;
@@ -53,7 +44,6 @@ grid-column: 1 /-1;
 margin-left: 32px;
 margin-right: 32px;
 margin-top: 32px;
-
 `;
 
 export default function Home() {
@@ -66,39 +56,14 @@ export default function Home() {
    
 
       <MainPageGrid >
-<StyledNavbar className="navbar navbar-expand-lg navbar-light bg-light">
-<a href="/"><Logo src="/logo192.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
-  <a className="navbar-brand" href="#">Spib.no</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
-      <li className="nav-item active">
-        <a className="nav-link fw-bold" href="#">Home <span className="sr-only"></span></a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="infiniteSpitfire">Infinite Spitfire</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">About Me</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Contact</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</StyledNavbar>
-<Hero />
+        <Navbar />
+        <Hero />
         <Spib src="/SpibBounce.gif" />
         <Divider />
         <MainContentGrid>
-        <Card linkToPage="infiniteSpitfire" text="Looking for the old page?" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg"/>
-        <Card linkToPage="aboutMe" text="Who am I?" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg"  />
-        <Card linkToPage="donate" text="asd" image="https://derpicdn.net/img/view/2022/4/26/2853450.jpg" />
+        <Card linkToPage="infiniteSpitfire" text="Looking for the old page?" image="/SpitfireSmile.png"/>
+        <Card linkToPage="aboutMe" text="Who am I?" image="/Muffin.png"  />
+        <Card linkToPage="https://ko-fi.com/simplesample" text="Buy me a coffee!" image="/Coffee.png" />
         </MainContentGrid>
         </MainPageGrid>
    
