@@ -59,7 +59,16 @@ const ContactContainer = styled.div`
 display: flex;
 width: 100%;
 height: 100%;
+flex-direction: row;
+@media (max-width: 400px) {  
+       flex-direction: column;
+}
+`;
 
+const SocialsContainer = styled.div`
+display: flex;
+width: 100%;
+height: 100%;
 `;
 
 const ImageWrapper = styled.div`
@@ -120,10 +129,10 @@ const AboutMePage = () => {
             </div>
                 <h4 className="theme-color">Contact me:</h4>
             <ContactContainer>
-                <StyledSVG src={"/discord.svg"} />
-                <StyledContactInfo>SimpleSaemple</StyledContactInfo>
-                <StyledSVG src={"/twitter.svg"} />
-                <StyledContactInfo>@SimpleSaemple</StyledContactInfo>
+               <SocialsContainer> <StyledSVG src={"/discord.svg"} />
+                <StyledContactInfo>SimpleSaemple</StyledContactInfo></SocialsContainer>
+                <SocialsContainer><StyledSVG src={"/twitter.svg"} />
+                <StyledContactInfo>@SimpleSaemple</StyledContactInfo></SocialsContainer>
             </ContactContainer>
           </ TextWrapper>
 

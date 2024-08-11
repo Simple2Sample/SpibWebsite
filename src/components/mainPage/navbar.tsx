@@ -16,7 +16,7 @@ const Navbar = () => {
     return(
     <StyledNavbar className="navbar navbar-expand-md navbar-light bg-light">
 <a href="/"><Logo src="/logo192.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
-  <a className="navbar-brand" href="#">Spib.no</a>
+  <a className="navbar-brand" href="">Spib.no</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span className="navbar-toggler-icon"></span>
 </button>
