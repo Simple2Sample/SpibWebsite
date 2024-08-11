@@ -50,6 +50,7 @@ align-content: center;
 text-align: center;
 grid-column: 1/-1;
 grid-row: 2;
+margin-bottom: px;
 
 `;
 
@@ -57,6 +58,7 @@ grid-row: 2;
 const CardComponent: React.FC<CardProps> = (props) => {
 
   return (
+    <a href='infiniteSpitfire'>
    <CardContainer className='bg-light card' $gridcolumn={props.$gridcolumn}>
    <ImageContainer> <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
    </ImageContainer>
@@ -65,6 +67,7 @@ const CardComponent: React.FC<CardProps> = (props) => {
   
 
     </CardContainer>
+ </a>
   );
 }
 
