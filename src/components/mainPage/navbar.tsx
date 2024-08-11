@@ -14,12 +14,10 @@ margin-left: 8px;
 
 const Navbar = () => {
     return(
-    <StyledNavbar className="navbar navbar-expand-md navbar-light bg-light">
+    <StyledNavbar className="navbar navbar-expand-md navbar-light bg-light justify-content-start">
 <a href="/"><Logo src="/logo192.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
-  <a className="navbar-brand" href="">Spib.no</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span className="navbar-toggler-icon"></span>
-</button>
+  <a className="navbar-brand align" href="">Spib.no</a>
+
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
       <li className="nav-item active">

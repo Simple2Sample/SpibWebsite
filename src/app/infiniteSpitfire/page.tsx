@@ -191,8 +191,6 @@ if (images[currImgNo+1]) {
   }
 
  
-
-  
   return (
     <MainPageGrid>
      <Navbar />

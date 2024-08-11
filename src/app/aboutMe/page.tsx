@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
   grid-column: 1 /1;
   grid-row: 1;
   width: 100%;
-  margin-left: 16px;
+  margin-left: 32px;
   align-self: center;
   justify-self: center;
     justify-content: center;
