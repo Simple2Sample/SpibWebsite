@@ -190,22 +190,21 @@ if (images[currImgNo+1]) {
     }
   }
 
-  if(!images.length) {
-    return( <LoadingContainer><h1>{loadingText}</h1></LoadingContainer>
-    
-    )
-  }
+ 
 
   
   return (
     <MainPageGrid>
      <Navbar />
     <ContentContainer  style={{display:"flex",alignItems:"center",justifyContent:"space-around", background:"black"}} tabIndex={0} onKeyDown={handleKeyDown} >
-      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].view_url} draggable={false}  />
+      {!images.length ? (<LoadingContainer><h1>{loadingText}</h1></LoadingContainer>) : (
 
+
+      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].view_url} draggable={false}  />
+      )}
     </ContentContainer>
     <InstructionsContainer>
-      <StyledInstructions>Made by {getArtistName(images[currImgNo] )}</StyledInstructions>
+      <StyledInstructions>Made by {images[currImgNo] ? getArtistName(images[currImgNo] ) : 'Unknown'}</StyledInstructions>
         <h4>Instructions:</h4>
         <StyledInstructions>Click A or D, or swipe to navigate</StyledInstructions>
         <StyledInstructions>Click to open image in new tab</StyledInstructions>
