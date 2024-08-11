@@ -117,7 +117,7 @@ const AboutMePage = () => {
                 {`I'm a horse artist from Norway, mainly focusing on creating art of the pegasus Spitfire from the My Little Pony series. 
                 Currently I work as a full time web developer while also having a civil engineering degree in robotics. 
                 I have a passion for creating things, like digital art, electromechanical devices, 
-                3D prints and such. When working on projects, When exploring the unknown, I always strive to learn and expand my horizon. 
+                3D prints and such. 
               `}
               </StyledText>
               <StyledText>
