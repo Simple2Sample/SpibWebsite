@@ -55,12 +55,12 @@ const StyledInstructions = styled.p`
   padding: 0;
 `;
 
-export const FetchAndDisplayImage = () => {
+ const InfiniteSpitfirePage = () => {
   const [images, setImages] = useState([] as DerpibooruImage[]);
   const [currImgNo, setCurrImgNo] = useState(0);
   const [apiURL, setApiURL] = useState('');
   const [loadingText, setLoadingText] = useState("Loading yellow fire horse...");
-  const [nextImageObj, setNextImageObj] = useState();
+  const [nextImageObj, setNextImageObj] = useState('' as unknown);
   
   const imageLink = images[currImgNo] ? "https://derpibooru.org/images/" + images[currImgNo].id : '';
 
@@ -213,4 +213,4 @@ if (images[currImgNo+1]) {
   )
 }
 
-export default FetchAndDisplayImage;
+export default InfiniteSpitfirePage;
