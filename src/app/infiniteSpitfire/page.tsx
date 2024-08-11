@@ -1,4 +1,6 @@
 "use client";
+import Navbar from "@/components/mainPage/navbar";
+import { MainPageGrid } from "@/components/styles/mainBar.Styles";
 import DerpibooruImage from "@/Types/derpibooruImage";
 import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
@@ -9,10 +11,49 @@ const LoadingContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   `;
 
+const ContentContainer = styled.div`
+
+ height: 100%;
+ width: 100%;
+grid-column: 1 / -1;
+grid-row: 2 / -1;
+`;
+
+const StyledImage = styled.img`
+display: flex;
+max-Height:100%;
+height:auto;
+max-Width:100%;
+background:"white";
+cursor: pointer;
+`;
+
+const InstructionsContainer = styled.div`
+position: absolute;
+grid-column: 1 / -1;
+grid-row: 1 / -1;
+justify-self: end;
+justify-content: center;
+align-content: center;
+text-align: center;
+opacity: 0.5;
+align-self: end;
+border-radius: 16px;
+background-color: grey;
+height: 150px;
+width: 250px;
+
+`;
+const StyledInstructions = styled.p`
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+`;
 
 export const FetchAndDisplayImage = () => {
   const [images, setImages] = useState([] as DerpibooruImage[]);
@@ -21,6 +62,7 @@ export const FetchAndDisplayImage = () => {
   const [loadingText, setLoadingText] = useState("Loading yellow fire horse...");
   const [nextImageObj, setNextImageObj] = useState();
   
+  const imageLink = images[currImgNo] ? "https://derpibooru.org/images/" + images[currImgNo].id : '';
 
   const openInNewTab = () => {
     window.open("https://derpibooru.org/images/" + images[currImgNo].id, '_blank', 'noopener,noreferrer');
@@ -44,7 +86,13 @@ export const FetchAndDisplayImage = () => {
     return modifiedURL;
   }
 
-
+  const getArtistName = (image: DerpibooruImage) => {
+    const artistTag = image.tags.find(tag => tag.startsWith("artist:"));
+    if (artistTag) {
+        return artistTag.replace("artist:", "");
+    }
+    return "Unknown";
+  }
 
 
 const checkQuery = () => {
@@ -116,7 +164,10 @@ if (images[currImgNo+1]) {
     .then((response) => {
       const newList:DerpibooruImage[] = [...images, ...response.images];
       setImages(newList);
-    })
+    }).catch((error) => {
+      console.error('Error:', error);
+      setLoadingText("Error fetching images. Please try again later.");
+    });
   }
 
   const handleKeyDown = (e:any) => {
@@ -126,11 +177,13 @@ if (images[currImgNo+1]) {
     switch (e.key) {
       case "l":
       case "d":
+      case "D":
       case "ArrowRight":
         nextImage()
         break;
       case "h":
       case "a":
+      case "A":
       case "ArrowLeft":
         prevImage()
         break;
@@ -145,10 +198,21 @@ if (images[currImgNo+1]) {
 
   
   return (
-    <div  style={{display:"flex",alignItems:"center",justifyContent:"space-around", background:"black", width: "100vw", height: "100vh"}} tabIndex={0} onKeyDown={handleKeyDown} >
-      <img alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].view_url} style={{background:"white",cursor: "pointer",maxHeight:"100%",height:"auto",maxWidth:"100%"}} draggable={false}  />
-    </div>
+    <MainPageGrid>
+     <Navbar />
+    <ContentContainer  style={{display:"flex",alignItems:"center",justifyContent:"space-around", background:"black"}} tabIndex={0} onKeyDown={handleKeyDown} >
+      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].view_url} draggable={false}  />
 
+    </ContentContainer>
+    <InstructionsContainer>
+      <StyledInstructions>Made by {getArtistName(images[currImgNo] )}</StyledInstructions>
+        <h4>Instructions:</h4>
+        <StyledInstructions>Click A or D, or swipe to navigate</StyledInstructions>
+        <StyledInstructions>Click to open image in new tab</StyledInstructions>
+        <StyledInstructions> {`Press "l" or "d" for next image`}</StyledInstructions>
+        <StyledInstructions> {`Images hosted by Derpibooru`}</StyledInstructions>
+        </InstructionsContainer> 
+    </MainPageGrid>
   )
 }
 
