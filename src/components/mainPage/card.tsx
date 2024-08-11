@@ -10,6 +10,7 @@ type CardProps = CardContainerProps &{
   image: string;
   text: string;
   linkToPage: string;
+  openInNewTab: boolean;
 };
 const CardContainer= styled.div<CardContainerProps>`
 display: grid;
@@ -59,7 +60,7 @@ margin-bottom: px;
 const CardComponent: React.FC<CardProps> = (props) => {
 
   return (
-    <a href={props.linkToPage}>
+    <a target={props.openInNewTab ? "_blank" : ''} href={props.linkToPage}>
    <CardContainer className='bg-light card' >
    <ImageContainer> <StyledImg className="bd-placeholder-img card-img-top" width="100%" height="225" src={props.image} role="img" aria-label="Placeholder: Thumbnail" ></StyledImg>
    </ImageContainer>
