@@ -1,7 +1,5 @@
 "use client";
 import 'bootstrap/dist/css/bootstrap.css';
-import type { Metadata } from "next";
-import BootstrapClient from '@/components/BootstrapClient.js';
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from 'next/head';
@@ -61,7 +59,6 @@ export default function RootLayout({
           }
         `}</style>
       </Head>
-      <BootstrapClient />
       <body className={`${inter.className} ${isLoading ? '' : 'loaded'}`}>
         {isLoading ? (
           <LoadingContainer>
