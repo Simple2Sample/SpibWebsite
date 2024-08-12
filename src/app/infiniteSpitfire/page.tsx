@@ -130,7 +130,7 @@ useEffect(() => {
   useEffect(() => {
 if (images[currImgNo+1]) {
   const prefetch = new Image();
-  prefetch.src = images[currImgNo+1].view_url;
+  prefetch.src = images[currImgNo+1].representations.large;
   setNextImageObj(prefetch);
 }
 
