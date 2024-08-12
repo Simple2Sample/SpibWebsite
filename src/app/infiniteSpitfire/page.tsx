@@ -187,7 +187,7 @@ if (images[currImgNo+1]) {
         break;
     }
   }
-
+console.log(images[currImgNo]);
  
   return (
     <MainPageGrid>
@@ -196,7 +196,7 @@ if (images[currImgNo+1]) {
       {!images.length ? (<LoadingContainer><h1>{loadingText}</h1></LoadingContainer>) : (
 
 
-      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].view_url} draggable={false}  />
+      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].representations.large} draggable={false}  />
       )}
     </ContentContainer>
     <InstructionsContainer>

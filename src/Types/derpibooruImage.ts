@@ -7,6 +7,8 @@ type Intensities = {
 
 type Representations = {
     full: string;
+    large: string;
+    medium: string;
     small: string;
     thumb_tiny: string;
     [key: string]: string; // To allow for additional representations
