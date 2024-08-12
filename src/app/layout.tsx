@@ -50,13 +50,11 @@ export default function RootLayout({
   
   
   <meta property="og:title" content="Spib"/>
-  <meta property="og:description" content="Spitfire = Spib"/>
-  <meta property="og:url" content="https://spib.no"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://spib.no/SpibBounce.gif"/>
-  <meta property="og:image:width" content="800"/>
-  <meta property="og:image:height" content="600"/>
-  <meta property="og:image:alt" content="Spib Logo"/>
+  <meta property="og:description" content="Spitfire = Spib"/>
+  <meta property="og:url" content="https://spib.no"/>
+  
         <style>{`
           body {
             visibility: hidden;
