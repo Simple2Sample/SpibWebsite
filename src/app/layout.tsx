@@ -5,7 +5,6 @@ import "./globals.css";
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
-import { metadata } from './metadata';
 
 
 const inter = Inter({ subsets: ["latin"] });
