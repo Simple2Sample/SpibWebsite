@@ -73,7 +73,6 @@ const StyledInstructions = styled.p`
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => nextImage(),
     onSwipedRight: () => prevImage(),
-    onTap: () => openInNewTab(),
     trackMouse: true,
     swipeDuration: 500,
     delta: 5
@@ -195,7 +194,7 @@ if (images[currImgNo+1]) {
       {!images.length ? (<LoadingContainer><h1>{loadingText}</h1></LoadingContainer>) : (
 
 
-      <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].representations.large} draggable={false}  />
+     <StyledImage alt="Image of a beautiful pegaus called Spitfire" {...swipeHandlers} src={images[currImgNo].representations.large} onClick={() =>openInNewTab()} draggable={false}  />
       )}
     </ContentContainer>
     <InstructionsContainer>
