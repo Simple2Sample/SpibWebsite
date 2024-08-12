@@ -5,6 +5,7 @@ import "./globals.css";
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
+import { Metadata } from 'next';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,13 +19,33 @@ const LoadingContainer = styled.div`
 const LoadingText = styled.p`
   text-align: center;
 `;
+export const metadata: Metadata = {
+  title: "Spib",
+  description: "Spitfire = Spib",
+  applicationName: "Spib.no",
+  icons: '/SpibBounce.gif',
+  openGraph: {
+    title: "Spib",
+    description: "Spitfire = Spib",
+    url: "https://spib.no",
+    type: "website",
+    images: [
+      {
+        url: "https://yourwebsite.com/SpibBounce.gif",
+        width: 800,
+        height: 600,
+        alt: "Spib Logo",
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const [isLoading, setIsLoading] = useState(true);
-
 
   useEffect(() => {
     const handleLoad = () => {
@@ -42,6 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <metadata />
         <style>{`
           body {
             visibility: hidden;
