@@ -187,7 +187,6 @@ if (images[currImgNo+1]) {
         break;
     }
   }
-console.log(images[currImgNo]);
  
   return (
     <MainPageGrid>
