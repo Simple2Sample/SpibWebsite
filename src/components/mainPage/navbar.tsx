@@ -15,7 +15,7 @@ margin-left: 8px;
 const Navbar = () => {
     return(
     <StyledNavbar className="navbar navbar-expand-md navbar-light bg-light justify-content-start">
-<a href="/"><Logo src="/logo192.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
+<a href="/"><Logo src="/logo192small.png" width="40"  height="40" className="d-inline-block align-top " alt="" /></a>
   <a className="navbar-brand align" href="">Spib.no</a>
 
   <div className="collapse navbar-collapse" id="navbarNav">

@@ -61,9 +61,9 @@ export default function Home() {
         <Spib src="/SpibBounce.gif" />
         <Divider />
         <MainContentGrid>
-        <Card linkToPage="infiniteSpitfire"  openInNewTab={false} text="Looking for the old page?" image="/SpitfireSmile.png"/>
-        <Card linkToPage="aboutMe"openInNewTab={false} text="Who am I?" image="/Muffin.png"  />
-        <Card linkToPage="https://ko-fi.com/simplesample" openInNewTab text="Buy me a coffee!" image="/Coffee.png" />
+        <Card linkToPage="infiniteSpitfire"  openInNewTab={false} text="Looking for the old page?" image="/SpitfireSmile.jpg"/>
+        <Card linkToPage="aboutMe"openInNewTab={false} text="Who am I?" image="/Muffin.jpg"  />
+        <Card linkToPage="https://ko-fi.com/simplesample" openInNewTab text="Buy me a coffee!" image="/Coffee.jpg" />
         </MainContentGrid>
         </MainPageGrid>
    
