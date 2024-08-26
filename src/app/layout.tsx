@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   applicationName: 'Spib.no',
   creator: 'Simple Sæmple',
   robots: 'index, follow',
-  icons: '/SpibBounce.gif',
+  icons: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
 }
 
 export default function RootLayout({
