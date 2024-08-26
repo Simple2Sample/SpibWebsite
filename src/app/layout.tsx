@@ -17,14 +17,16 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   openGraph: {
     title: 'Spib.no',
-    description: 'Spitfire = Spib',
+    description: `Spitfire = Spib
+    Spitfire stuff & personal website
+    Made by Simple Sæmple
+    `,
     type: 'website',
     siteName: 'Spib.no',
     images: 
       {
         url: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
         alt: 'The pegasus Spitfire',
-        width:150
       },
     
   },
