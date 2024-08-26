@@ -18,6 +18,7 @@ background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity));
 grid-template-rows: 3fr 1fr;
 grid-template-columns: 1fr 1fr;
 height: 384px;
+border:none;
 width: 256px;
 margin-bottom: 16px;
 
@@ -52,7 +53,7 @@ align-content: center;
 text-align: center;
 grid-column: 1/-1;
 grid-row: 2;
-margin-bottom: px;
+
 
 `;
 

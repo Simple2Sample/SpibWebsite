@@ -58,7 +58,7 @@ export default function Home() {
       <MainPageGrid >
         <Navbar />
         <Hero />
-        <Spib src="/SpibBounce.gif" />
+        <Spib src="/SpibBounce.gif" title="Spitfire by wildberry-poptart" />
         <Divider />
         <MainContentGrid>
         <Card linkToPage="infiniteSpitfire"  openInNewTab={false} text="Looking for the old page?" image="/SpitfireSmile.jpg"/>
