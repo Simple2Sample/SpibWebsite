@@ -80,7 +80,7 @@ const StyledInstructions = styled.p`
   });
 
   const modifiedBaseURL = (queryString:string) => {
-    const baseURL = "https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-fetish,-diaper,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl";
+    const baseURL = "https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-ai generated,-fetish,-diaper,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl";
     const URLTail = ",score.gte%3A100&sf=random";
     const modifiedURL = baseURL +","+ window.location.search.slice(1).toString() + URLTail;
     return modifiedURL;
@@ -98,7 +98,7 @@ const StyledInstructions = styled.p`
 const checkQuery = () => {
   if ( window?.location.search === "?nsfw") {
     setLoadingText("Loading lewd yellow fire horse...");
-    setApiURL("https://derpibooru.org/api/v1/json/search/images?filter_id=195915&per_page=50&q=explicit,-diaper,-foalcon,-artist:mykegreywolf,-sfm,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A250&sf=random");
+    setApiURL("https://derpibooru.org/api/v1/json/search/images?filter_id=195915&per_page=50&q=explicit,-ai generated,-diaper,-foalcon,-artist:mykegreywolf,-sfm,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A250&sf=random");
     return;
   }
 if (window?.location.search) {  
@@ -109,7 +109,7 @@ if (window?.location.search) {
 
 if (!window?.location.search)
   {
-  setApiURL("https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-fetish,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A100&sf=random");
+  setApiURL("https://derpibooru.org/api/v1/json/search/images?per_page=50&q=safe,-pregnancy,-fetish,-ai generated,-diaper,-artist:mykegreywolf,spitfire,-screencap,-comic,-original_format:mp4,-original_format:webm,-irl,score.gte%3A100&sf=random");
   }
   return;
 }
