@@ -14,7 +14,16 @@ export const metadata: Metadata = {
   applicationName: 'Spib.no',
   creator: 'Simple Sæmple',
   robots: 'index, follow',
-  icons: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
+  openGraph: {
+    title: 'Spib.no',
+    description: 'Spitfire = Spib',
+    images: [
+      {
+        url: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
+        alt: 'The pegasus Spitfire',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
