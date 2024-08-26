@@ -8,29 +8,24 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  description : "Spitfire = Spib",
-  colorScheme:'dark',
+export const metadata = {
+  description: "Spitfire = Spib",
+  colorScheme: 'dark',
   title: "Spib",
   applicationName: 'Spib.no',
   creator: 'Simple Sæmple',
   robots: 'index, follow',
   openGraph: {
     title: 'Spib.no',
-    description: `Spitfire = Spib
-    Spitfire stuff & personal website
-    Made by Simple Sæmple
-    `,
+    description: `Spitfire = Spib. Spitfire stuff & personal website by Simple Sæmple.`,
     type: 'website',
     siteName: 'Spib.no',
-    images: 
-      {
-        url: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
-        alt: 'The pegasus Spitfire',
-      },
-    
+    images: {
+      url: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
+      alt: 'The pegasus Spitfire',
+    },
   },
-}
+};
 
 export default function RootLayout({
   children,
