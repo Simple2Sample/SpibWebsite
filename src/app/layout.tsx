@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Spib.no',
     description: 'Spitfire = Spib',
+    type: 'website',
+    siteName: 'Spib.no',
     images: [
       {
         url: 'https://derpicdn.net/img/view/2015/5/14/896071.gif',
