@@ -30,6 +30,7 @@ height:auto;
 max-Width:100%;
 background:"white";
 cursor: pointer;
+user-select: none;
 `;
 
 const InstructionsContainer = styled.div`
@@ -62,7 +63,6 @@ const StyledInstructions = styled.p`
   const [loadingText, setLoadingText] = useState("Loading yellow fire horse...");
   const [nextImageObj, setNextImageObj] = useState('' as unknown);
   
-  const imageLink = images[currImgNo] ? "https://derpibooru.org/images/" + images[currImgNo].id : '';
 
   const openInNewTab = () => {
     window.open("https://derpibooru.org/images/" + images[currImgNo].id, '_blank', 'noopener,noreferrer');
