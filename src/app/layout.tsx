@@ -1,16 +1,18 @@
-
 import 'bootstrap/dist/css/bootstrap.css';
 import { Inter } from "next/font/google";
 import Providers from '@/components/providers';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import "./globals.css";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const generateViewPort: Viewport = {
+    colorScheme: 'dark',
+}
+
 export const metadata = {
   description: "Spitfire = Spib",
-  colorScheme: 'dark',
   title: "Spib",
   applicationName: 'Spib.no',
   creator: 'Simple Sæmple',
